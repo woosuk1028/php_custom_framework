@@ -4,7 +4,8 @@
     require_once dirname(__FILE__)."/system/Function.php";
     require_once dirname(__FILE__)."/config/config.php";
     require_once dirname(__FILE__)."/system/Database.php";
-    require_once dirname(__FILE__)."/system/Load.php";
+    require_once dirname(__FILE__)."/system/Controller.php";
+    require_once dirname(__FILE__)."/system/Model.php";
 
 
     $request_uri = $_SERVER['REQUEST_URI'];
@@ -15,6 +16,12 @@
     // controller setting
     $controller = isset($segments[$app['DEFAULT_URI_INDEX']]) ? $segments[$app['DEFAULT_URI_INDEX']] : 'default_controller';
     $method = isset($segments[$app['DEFAULT_URI_INDEX']+1]) ? $segments[$app['DEFAULT_URI_INDEX']+1] : 'default_method';
+
+    $request = explode('?', trim($method,'?'));
+    if(count($request)>1)
+    {
+        $method = $request[0];
+    }
 
     $controller = ucfirst($controller);
     $controller_url = "controllers/$controller.php";

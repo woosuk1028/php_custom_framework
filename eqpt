@@ -1,0 +1,129 @@
+#!/usr/bin/env php
+<?php
+
+    function generateController($description)
+    {
+        $date = date('Y_m_d');
+        $name = ucfirst($description);
+        $path = "controllers/";
+        $filename = $path.$name.'.php';
+        $className = $name;
+
+        $content = "<?php\n\n";
+        $content .= "class $className extends Controller\n";
+        $content .= "{\n";
+        $content .= "    public function __construct()\n";
+        $content .= "    {\n";
+        $content .= "       parent::__construct();\n";
+        $content .= "    }\n\n";
+        $content .= "    public function index()\n";
+        $content .= "    {\n";
+        $content .= "    }\n";
+        $content .= "}\n";
+
+        file_put_contents($filename, $content);
+
+        echo "Created Controller file: $filename\n";
+    }
+
+    function generateModel($description)
+    {
+        $date = date('Y_m_d');
+        $name = ucfirst($description);
+        $path = "model/";
+        $filename = $path.$name.'.php';
+        $className = $name;
+
+        $content = "<?php\n\n";
+        $content .= "class $className extends Model\n";
+        $content .= "{\n";
+        $content .= "    public function __construct()\n";
+        $content .= "    {\n";
+        $content .= "       parent::__construct();\n";
+        $content .= "    }\n\n";
+        $content .= "    public function index()\n";
+        $content .= "    {\n";
+        $content .= "    }\n";
+        $content .= "}\n";
+
+        file_put_contents($filename, $content);
+
+        echo "Created Model file: $filename\n";
+    }
+
+    function generateService($description)
+    {
+        $date = date('Y_m_d');
+        $name = ucfirst($description);
+        $path = "service/";
+        $filename = $path.$name.'.php';
+        $className = $name;
+
+        $content = "<?php\n\n";
+        $content .= "class $className extends Service\n";
+        $content .= "{\n";
+        $content .= "    public function __construct()\n";
+        $content .= "    {\n";
+        $content .= "       parent::__construct();\n";
+        $content .= "    }\n\n";
+        $content .= "    public function index()\n";
+        $content .= "    {\n";
+        $content .= "    }\n";
+        $content .= "}\n";
+
+        file_put_contents($filename, $content);
+
+        echo "Created Service file: $filename\n";
+    }
+
+    function generateView($description)
+    {
+        $date = date('Y_m_d');
+        $name = ucfirst($description);
+        $path = "view/";
+        $filename = $path.$name.'.php';
+        $className = $name;
+
+        $content = "<!doctype html>\n";
+        $content.= "<html lang='en'>\n";
+        $content.= "<head>\n";
+        $content.= "    <meta charset='UTF-8'>\n";
+        $content.= "    <meta name='viewport' content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>\n";
+        $content.= "    <meta http-equiv='X-UA-Compatible' content='ie=edge'>\n";
+        $content.= "    <title>Document</title>\n";
+        $content.= "</head>\n";
+        $content.= "<body>\n\n";
+        $content.= "</body>\n";
+        $content.= "</html>\n";
+
+        file_put_contents($filename, $content);
+
+        echo "Created View file: $filename\n";
+    }
+
+    if (!isset($argv[1])) {
+        echo "Usage: php {$argv[0]} [description]\n";
+        exit(1);
+    }
+
+    if (!isset($argv[2])) {
+        echo "Usage: php {$argv[0]} {$argv[1]} [name]\n";
+        exit(2);
+    }
+
+    if($argv[1] == "controller")
+    {
+        generateController($argv[2]);
+    }
+    else if($argv[1] == "model")
+    {
+        generateModel($argv[2]);
+    }
+    else if($argv[1] == "service")
+    {
+        generateService($argv[2]);
+    }
+    else if($argv[1] == "view")
+    {
+        generateView($argv[2]);
+    }

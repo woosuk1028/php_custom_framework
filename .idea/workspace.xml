@@ -20,7 +20,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cashmoa_QA_server" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -48,7 +48,10 @@
       <workItem from="1689038401579" duration="1199000" />
       <workItem from="1689125061259" duration="2697000" />
       <workItem from="1689751611626" duration="1218000" />
-      <workItem from="1689820250569" duration="10931000" />
+      <workItem from="1689820250569" duration="11165000" />
+      <workItem from="1690784316847" duration="4769000" />
+      <workItem from="1690852909183" duration="10542000" />
+      <workItem from="1691472451783" duration="278000" />
     </task>
     <servers />
   </component>
